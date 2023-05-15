@@ -1,0 +1,77 @@
+Metadata-Version: 2.1
+Name: eyes-images
+Version: 5.18.0
+Summary: Applitools Python SDK. Images package
+Home-page: http://www.applitools.com
+Author: Applitools Team
+Author-email: team@applitools.com
+License: Applitools SDK License
+Project-URL: Source, https://github.com/applitools/eyes.sdk.javascript1/tree/master/python/eyes_images
+Keywords: applitools,eyes
+Platform: Linux
+Platform: MacOS
+Platform: Windows
+Classifier: Programming Language :: Python
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Topic :: Software Development :: Quality Assurance
+Classifier: Topic :: Software Development :: Testing
+Requires-Python: >=2.7, <4
+Requires-Dist: attrs (<23,>=19.2.0)
+Requires-Dist: core-universal (<3,>=2.4.10)
+Requires-Dist: marshmallow (<3)
+Requires-Dist: six
+Requires-Dist: websocket-client (<=0.59)
+Requires-Dist: futures (==3.2.0) ; python_version < "3.0"
+Requires-Dist: enum34 (==1.1.6) ; python_version < "3.4"
+Requires-Dist: typing (>=3.5.2) ; python_version < "3.5"
+
+Applitools Eyes Python SDK
+==========================
+|pypi version| |pypi downloads| |Black Formatter|
+
+Applitools Eyes SDK For Images and Selenium/Appium WebDrivers
+
+`Change log`_
+
+Installation
+------------
+
+Install the eyes-images SDK.
+
+::
+
+    pip install eyes-images
+
+Usage
+-----
+
+Please check the applitools website for usage instructions:
+
+-  Python Images documentation:
+   https://applitools.com/docs/api-ref/sdk-api/images/python_sdk4/eyes
+
+-  Selenium Python example:
+   https://applitools.com/resources/tutorial/selenium/python#step-2
+
+-  Python Appium native example:
+   https://applitools.com/resources/tutorial/appium/native\_python#step-2
+
+-  Python Appium web example:
+   https://applitools.com/resources/tutorial/appium/python#step-2
+
+-  Playwright Eyes tutorial:
+   https://applitools.com/tutorials/quickstart/web/playwright/python
+
+.. _Change log: https://github.com/applitools/eyes.sdk.javascript1/blob/master/python/eyes_images/CHANGELOG.md
+.. |Black Formatter| image:: https://img.shields.io/badge/code%20style-black-000000.svg
+    :target: https://github.com/ambv/black
+.. |pypi version| image:: https://img.shields.io/pypi/v/eyes-images
+   :target: https://pypi.org/project/eyes-images/
+.. |pypi downloads| image:: https://img.shields.io/pypi/dw/eyes-images
+   :target: https://pypi.org/project/eyes-images/
+
+

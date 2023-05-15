@@ -17,3 +17,6 @@ class LoginPage:
 
     def click_login_button(self):
         self.driver.find_element(*self.login_button).click()
+
+    def go_to_login_page(self):
+        self.driver.get('https://www.saucedemo.com/')

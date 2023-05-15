@@ -19,8 +19,8 @@ Install Selenium:
 pip install selenium
 
 Install Applitools Eyes for Visual Testing:
-#pip install pytest-regressions
 pip install eyes-selenium
+pip install applitools-eyes-selenium
 
 Install BDD:
 pip install pytest-bdd
@@ -32,7 +32,7 @@ pip install robotframework-seleniumlibrary
 
 Run tests in cmd:
 pytest myenv/tests/selenium_tests/
-
+behave myenv/tests/features/ 
 
 
 
