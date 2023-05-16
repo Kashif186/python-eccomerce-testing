@@ -1,5 +1,4 @@
 from pages.inventory_page import InventoryPage
-from pages.cart_page import CartPage
 
 def test_navigate_to_cart(driver, login):
     inventory_page = InventoryPage(driver)
