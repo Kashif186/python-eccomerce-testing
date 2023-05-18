@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.0 on win32)" generated="20230518 04:58:03.347" rpa="false" schemaversion="3">
+<suite id="s1" name="Test Suite" source="C:\Users\Kashif\OneDrive\Documents\Projects\Python Ecommerce\python-eccomerce\myenv\tests\robot_tests\test_suite.robot">
+<test id="s1-t1" name="Test Suite" line="5">
+<kw name="Successful login">
+<msg timestamp="20230518 04:58:03.384" level="FAIL">No keyword with name 'Successful login' found.</msg>
+<status status="FAIL" starttime="20230518 04:58:03.384" endtime="20230518 04:58:03.384"/>
+</kw>
+<kw name="add_to_cart.robot.Add Item to Cart">
+<status status="NOT RUN" starttime="20230518 04:58:03.386" endtime="20230518 04:58:03.386"/>
+</kw>
+<kw name="remove_from_cart.robot.Remove Item from Cart">
+<status status="NOT RUN" starttime="20230518 04:58:03.387" endtime="20230518 04:58:03.388"/>
+</kw>
+<kw name="navigate_to_cart.robot.Navigate to Cart Page">
+<status status="NOT RUN" starttime="20230518 04:58:03.389" endtime="20230518 04:58:03.389"/>
+</kw>
+<kw name="logout.robot.Logout">
+<status status="NOT RUN" starttime="20230518 04:58:03.391" endtime="20230518 04:58:03.391"/>
+</kw>
+<status status="FAIL" starttime="20230518 04:58:03.382" endtime="20230518 04:58:03.391">No keyword with name 'Successful login' found.</status>
+</test>
+<status status="FAIL" starttime="20230518 04:58:03.349" endtime="20230518 04:58:03.395"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Test Suite">Test Suite</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230518 04:58:03.380" level="ERROR">Error in file 'C:\Users\Kashif\OneDrive\Documents\Projects\Python Ecommerce\python-eccomerce\myenv\tests\robot_tests\test_suite.robot' on line 2: Error in file 'C:\Users\Kashif\OneDrive\Documents\Projects\Python Ecommerce\python-eccomerce\myenv\tests\robot_tests\login.robot' on line 6: Resource file with 'Test Cases' section is invalid.</msg>
+</errors>
+</robot>

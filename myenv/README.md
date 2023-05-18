@@ -33,6 +33,6 @@ pip install robotframework-seleniumlibrary
 Run tests in cmd:
 pytest myenv/tests/selenium_tests/
 behave myenv/tests/features/ 
-
+robot myenv/tests/robot_tests/
 
 

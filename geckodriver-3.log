@@ -1,0 +1,22 @@
+1684200008616	geckodriver	INFO	Listening on 127.0.0.1:54526
+1684200011675	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "54527" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Kashif\\AppData\\Local\\Temp\\rust_mozprofileEEY4LW"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1684200012218	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1684200012230	Marionette	INFO	Listening on port 54536
+Read port: 54536
+WebDriver BiDi listening on ws://127.0.0.1:54527
+1684200012382	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Kashif\\AppData\\Local\\Temp\\rust_mozprofileEEY4LW\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:54527/devtools/browser/dcde9442-1235-44c8-8b9a-9f970b032ebd
+console.error: (new TypeError("this._searchProviderInfo is null", "resource:///modules/SearchSERPTelemetry.sys.mjs", 468))
+console.error: (new TypeError("linkMap is undefined", "resource://gre/modules/NewTabUtils.sys.mjs", 2019))
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.saucedemo.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.saucedemo.com."
+1684200021080	Marionette	INFO	Stopped listening on port 54536
+Dynamically enable window occlusion 1
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 693: TypeError: this.tablesData[table] is undefined
+console.error: services.settings: 
+  main/query-stripping Signature failed  TypeError: NetworkError: Network request failed
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.jsm", 116))
