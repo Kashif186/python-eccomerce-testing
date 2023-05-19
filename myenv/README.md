@@ -28,11 +28,13 @@ pip install pytest-bdd
 Install Robot Framework:
 pip install robotframework
 pip install robotframework-seleniumlibrary
+pip install robotframework-requests
 
 
 Run tests in cmd:
 pytest myenv/tests/selenium_tests/
 behave myenv/tests/features/ 
 robot myenv/tests/robot_tests/
-
+pytest myenv/tests/api_tests/
+robot myenv/tests/api_tests/robot_api_tests/
 

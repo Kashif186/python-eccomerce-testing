@@ -1,38 +1,544 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.0 on win32)" generated="20230518 04:58:03.347" rpa="false" schemaversion="3">
-<suite id="s1" name="Test Suite" source="C:\Users\Kashif\OneDrive\Documents\Projects\Python Ecommerce\python-eccomerce\myenv\tests\robot_tests\test_suite.robot">
-<test id="s1-t1" name="Test Suite" line="5">
-<kw name="Successful login">
-<msg timestamp="20230518 04:58:03.384" level="FAIL">No keyword with name 'Successful login' found.</msg>
-<status status="FAIL" starttime="20230518 04:58:03.384" endtime="20230518 04:58:03.384"/>
+<robot generator="Robot 6.0.2 (Python 3.11.0 on win32)" generated="20230520 00:12:19.456" rpa="false" schemaversion="3">
+<suite id="s1" name="Robot Api Tests" source="C:\Users\Kashif\OneDrive\Documents\Projects\Python Ecommerce\python-eccomerce\myenv\tests\api_tests\robot_api_tests">
+<suite id="s1-s1" name="Test Create Post" source="C:\Users\Kashif\OneDrive\Documents\Projects\Python Ecommerce\python-eccomerce\myenv\tests\api_tests\robot_api_tests\test_create_post.robot">
+<test id="s1-s1-t1" name="Create a New Post" line="5">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>jsonplaceholder</arg>
+<arg>https://jsonplaceholder.typicode.com</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230520 00:12:19.707" level="INFO">Creating Session using : alias=jsonplaceholder, url=https://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230520 00:12:19.707" endtime="20230520 00:12:19.707"/>
 </kw>
-<kw name="add_to_cart.robot.Add Item to Cart">
-<status status="NOT RUN" starttime="20230518 04:58:03.386" endtime="20230518 04:58:03.386"/>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${headers}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230520 00:12:19.708" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230520 00:12:19.707" endtime="20230520 00:12:19.708"/>
 </kw>
-<kw name="remove_from_cart.robot.Remove Item from Cart">
-<status status="NOT RUN" starttime="20230518 04:58:03.387" endtime="20230518 04:58:03.388"/>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${payload}</var>
+<arg>title=New Post</arg>
+<arg>body=Hello, world!</arg>
+<arg>userId=1</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230520 00:12:19.708" level="INFO">${payload} = {'title': 'New Post', 'body': 'Hello, world!', 'userId': '1'}</msg>
+<status status="PASS" starttime="20230520 00:12:19.708" endtime="20230520 00:12:19.709"/>
 </kw>
-<kw name="navigate_to_cart.robot.Navigate to Cart Page">
-<status status="NOT RUN" starttime="20230518 04:58:03.389" endtime="20230518 04:58:03.389"/>
+<kw name="Post Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>jsonplaceholder</arg>
+<arg>/posts</arg>
+<arg>headers=${headers}</arg>
+<arg>json=${payload}</arg>
+<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
+<msg timestamp="20230520 00:12:19.709" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20230520 00:12:19.956" level="INFO">POST Request : url=https://jsonplaceholder.typicode.com/posts 
+ path_url=/posts 
+ headers={'User-Agent': 'python-requests/2.30.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '61'} 
+ body=b'{"title": "New Post", "body": "Hello, world!", "userId": "1"}' 
+ </msg>
+<msg timestamp="20230520 00:12:19.956" level="INFO">POST Response : url=https://jsonplaceholder.typicode.com/posts 
+ status=201, reason=Created 
+ headers={'Date': 'Fri, 19 May 2023 23:12:21 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '82', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '999', 'X-Ratelimit-Reset': '1684537992', 'Vary': 'Origin, X-HTTP-Method-Override, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Expires': '-1', 'Access-Control-Expose-Headers': 'Location', 'Location': 'http://jsonplaceholder.typicode.com/posts/101', 'X-Content-Type-Options': 'nosniff', 'Etag': 'W/"52-4s2zhtmctWVWc0nhwmGwVcEZl3M"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=qO3EBe95russAtj9slYX86VSqE%2BhhtVJN5722q6kBDyqmW8w28CUg%2Fcdy2GWvsGX7nkFUglUnBxcfEdYN%2Bx%2FoMREQshWyPK%2FL14zK7ZCWvw2iKu5nes6YAaNXTFRX1nC0%2FVWeJ%2BdaqzGb6fFS%2Bc%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '7ca0063419e6dccf-LHR'} 
+ body={
+  "title": "New Post",
+  "body": "Hello, world!",
+  "userId": "1",
+  "id": 101
+} 
+ </msg>
+<msg timestamp="20230520 00:12:19.957" level="INFO">C:\Users\Kashif\OneDrive\Documents\Projects\Python Ecommerce\python-eccomerce\myenv\Lib\site-packages\urllib3\connectionpool.py:1095: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jsonplaceholder.typicode.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg timestamp="20230520 00:12:19.957" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20230520 00:12:19.709" endtime="20230520 00:12:19.957"/>
 </kw>
-<kw name="logout.robot.Logout">
-<status status="NOT RUN" starttime="20230518 04:58:03.391" endtime="20230518 04:58:03.391"/>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>201</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20230520 00:12:19.960" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20230520 00:12:19.959" endtime="20230520 00:12:19.960"/>
 </kw>
-<status status="FAIL" starttime="20230518 04:58:03.382" endtime="20230518 04:58:03.391">No keyword with name 'Successful login' found.</status>
+<status status="PASS" starttime="20230520 00:12:19.706" endtime="20230520 00:12:19.961"/>
 </test>
-<status status="FAIL" starttime="20230518 04:58:03.349" endtime="20230518 04:58:03.395"/>
+<status status="PASS" starttime="20230520 00:12:19.498" endtime="20230520 00:12:19.962"/>
+</suite>
+<suite id="s1-s2" name="Test Delete Post" source="C:\Users\Kashif\OneDrive\Documents\Projects\Python Ecommerce\python-eccomerce\myenv\tests\api_tests\robot_api_tests\test_delete_post.robot">
+<test id="s1-s2-t1" name="Delete a Post" line="5">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>jsonplaceholder</arg>
+<arg>https://jsonplaceholder.typicode.com</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230520 00:12:19.972" level="INFO">Creating Session using : alias=jsonplaceholder, url=https://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230520 00:12:19.971" endtime="20230520 00:12:19.973"/>
+</kw>
+<kw name="Delete Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>jsonplaceholder</arg>
+<arg>/posts/1</arg>
+<doc>*DEPRECATED* Please use `DELETE On Session` instead.</doc>
+<msg timestamp="20230520 00:12:19.974" level="WARN">Keyword 'RequestsLibrary.Delete Request' is deprecated. Please use `DELETE On Session` instead.</msg>
+<msg timestamp="20230520 00:12:20.204" level="INFO">DELETE Request : url=https://jsonplaceholder.typicode.com/posts/1 
+ path_url=/posts/1 
+ headers={'User-Agent': 'python-requests/2.30.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg timestamp="20230520 00:12:20.204" level="INFO">DELETE Response : url=https://jsonplaceholder.typicode.com/posts/1 
+ status=200, reason=OK 
+ headers={'Date': 'Fri, 19 May 2023 23:12:21 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '2', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '998', 'X-Ratelimit-Reset': '1684537992', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Etag': 'W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=SzH5AZVXRX1WnyPfNRFw6I%2Bnto3c6vFZP1uvttnTin3wFc1D3wfkNNM6p2rA1z5n4eQZ2Ks0xQpCP2f6D%2Boi7UKWmo4B%2FHFkZiJza0pK%2BRaOMD5Ec7SpO%2F19adz%2BusJJc9eEGOVcGpon%2FKskWio%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '7ca006359e397702-LHR'} 
+ body={} 
+ </msg>
+<msg timestamp="20230520 00:12:20.204" level="INFO">C:\Users\Kashif\OneDrive\Documents\Projects\Python Ecommerce\python-eccomerce\myenv\Lib\site-packages\urllib3\connectionpool.py:1095: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jsonplaceholder.typicode.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg timestamp="20230520 00:12:20.204" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230520 00:12:19.974" endtime="20230520 00:12:20.204"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20230520 00:12:20.207" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20230520 00:12:20.206" endtime="20230520 00:12:20.207"/>
+</kw>
+<status status="PASS" starttime="20230520 00:12:19.971" endtime="20230520 00:12:20.208"/>
+</test>
+<status status="PASS" starttime="20230520 00:12:19.965" endtime="20230520 00:12:20.210"/>
+</suite>
+<suite id="s1-s3" name="Test Get Comments" source="C:\Users\Kashif\OneDrive\Documents\Projects\Python Ecommerce\python-eccomerce\myenv\tests\api_tests\robot_api_tests\test_get_comments.robot">
+<test id="s1-s3-t1" name="Get Comments for a Post" line="5">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>jsonplaceholder</arg>
+<arg>https://jsonplaceholder.typicode.com</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230520 00:12:20.218" level="INFO">Creating Session using : alias=jsonplaceholder, url=https://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230520 00:12:20.217" endtime="20230520 00:12:20.218"/>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>jsonplaceholder</arg>
+<arg>/comments?postId=1</arg>
+<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
+<msg timestamp="20230520 00:12:20.219" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20230520 00:12:20.289" level="INFO">GET Request : url=https://jsonplaceholder.typicode.com/comments?postId=1 
+ path_url=/comments?postId=1 
+ headers={'User-Agent': 'python-requests/2.30.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230520 00:12:20.289" level="INFO">GET Response : url=https://jsonplaceholder.typicode.com/comments?postId=1 
+ status=200, reason=OK 
+ headers={'Date': 'Fri, 19 May 2023 23:12:21 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '999', 'X-Ratelimit-Reset': '1681470347', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'max-age=43200', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Etag': 'W/"5e6-4bSPS5tq8F8ZDeFJULWh6upjp7U"', 'Content-Encoding': 'gzip', 'Via': '1.1 vegur', 'CF-Cache-Status': 'HIT', 'Age': '25006', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=D%2Bmllx1xDGcfaicw2KcjOwG7ABQyZeaoEZvdjJXaRuAj%2BUoBjNiRwlNxxeQ82XXHrBIaZ4lNC0p7ksgj3A9g2yQvg9MZagQB9MDEjoSaTxSH0vZd8BK6T%2BU9jgYp9wAxHcjoO8aXyRathj6yYJQ%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '7ca006372b567791-LHR'} 
+ body=[
+  {
+    "postId": 1,
+    "id": 1,
+    "name": "id labore ex et quam laborum",
+    "email": "Eliseo@gardner.biz",
+    "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium"
+  },
+  {
+    "postId": 1,
+    "id": 2,
+    "name": "quo vero reiciendis velit similique earum",
+    "email": "Jayne_Kuhic@sydney.com",
+    "body": "est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et"
+  },
+  {
+    "postId": 1,
+    "id": 3,
+    "name": "odio adipisci rerum aut animi",
+    "email": "Nikita@garfield.biz",
+    "body": "quia molestiae reprehenderit quasi aspernatur\naut expedita occaecati aliquam eveniet laudantium\nomnis quibusdam delectus saepe quia accusamus maiores nam est\ncum et ducimus et vero voluptates excepturi deleniti ratione"
+  },
+  {
+    "postId": 1,
+    "id": 4,
+    "name": "alias odio sit",
+    "email": "Lew@alysha.tv",
+    "body": "non et atque\noccaecati deserunt quas accusantium unde odit nobis qui voluptatem\nquia voluptas consequuntur itaque dolor\net qui rerum deleniti ut occaecati"
+  },
+  {
+    "postId": 1,
+    "id": 5,
+    "name": "vero eaque aliquid doloribus et culpa",
+    "email": "Hayden@althea.biz",
+    "body": "harum non quasi et ratione\ntempore iure ex voluptates in ratione\nharum architecto fugit inventore cupiditate\nvoluptates magni quo et"
+  }
+] 
+ </msg>
+<msg timestamp="20230520 00:12:20.289" level="INFO">C:\Users\Kashif\OneDrive\Documents\Projects\Python Ecommerce\python-eccomerce\myenv\Lib\site-packages\urllib3\connectionpool.py:1095: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jsonplaceholder.typicode.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg timestamp="20230520 00:12:20.289" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230520 00:12:20.219" endtime="20230520 00:12:20.289"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20230520 00:12:20.292" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20230520 00:12:20.291" endtime="20230520 00:12:20.292"/>
+</kw>
+<status status="PASS" starttime="20230520 00:12:20.216" endtime="20230520 00:12:20.292"/>
+</test>
+<status status="PASS" starttime="20230520 00:12:20.212" endtime="20230520 00:12:20.293"/>
+</suite>
+<suite id="s1-s4" name="Test Get Posts" source="C:\Users\Kashif\OneDrive\Documents\Projects\Python Ecommerce\python-eccomerce\myenv\tests\api_tests\robot_api_tests\test_get_posts.robot">
+<test id="s1-s4-t1" name="Get All Posts" line="6">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>jsonplaceholder</arg>
+<arg>https://jsonplaceholder.typicode.com</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230520 00:12:20.303" level="INFO">Creating Session using : alias=jsonplaceholder, url=https://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230520 00:12:20.303" endtime="20230520 00:12:20.303"/>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>jsonplaceholder</arg>
+<arg>/posts</arg>
+<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
+<msg timestamp="20230520 00:12:20.304" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20230520 00:12:20.427" level="INFO">GET Request : url=https://jsonplaceholder.typicode.com/posts 
+ path_url=/posts 
+ headers={'User-Agent': 'python-requests/2.30.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230520 00:12:20.427" level="INFO">GET Response : url=https://jsonplaceholder.typicode.com/posts 
+ status=200, reason=OK 
+ headers={'Date': 'Fri, 19 May 2023 23:12:21 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '999', 'X-Ratelimit-Reset': '1681743162', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'max-age=43200', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Etag': 'W/"6b80-Ybsq/K6GwwqrYkAsFxqDXGC7DoM"', 'Content-Encoding': 'gzip', 'Via': '1.1 vegur', 'CF-Cache-Status': 'HIT', 'Age': '15770', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=dhf8NYd8y9Pp6E0oCFoS%2BQhfqha05Caqs9fSI59zaJM7fSRzkGzzWQ2sj5FJ2fCL8AQFKMVSBPAtIV5EHAZC0Wdx6AGNRU8AT5nV44p%2FpFWWB8lRRDrG1kSBqoyMDL3BnrQqFyxJINMsXSB9mp0%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '7ca006380f4a4886-LHR'} 
+ body=[
+  {
+    "userId": 1,
+    "id": 1,
+    "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+    "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+  },
+  {
+    "userId": 1,
+    "id": 2,
+    "title": "qui est esse",
+    "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
+  },
+  {
+    "userId": 1,
+    "id": 3,
+    "title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
+    "body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
+  },
+  {
+    "userId": 1,
+    "id": 4,
+    "title": "eum et est occaecati",
+    "body": "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
+  },
+  {
+    "userId": 1,
+    "id": 5,
+    "title": "nesciunt quas odio",
+    "body": "repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque"
+  },
+  {
+    "userId": 1,
+    "id": 6,
+    "title": "dolorem eum magni eos aperiam quia",
+    "body": "ut aspernatur corporis harum nihil quis provident sequi\nmollitia nobis aliquid molestiae\nperspiciatis et ea nemo ab reprehenderit accusantium quas\nvoluptate dolores velit et doloremque molestiae"
+  },
+  {
+    "userId": 1,
+    "id": 7,
+    "title": "magnam facilis autem",
+    "body": "dolore placeat quibusdam ea quo vitae\nmagni quis enim qui quis quo nemo aut saepe\nquidem repellat excepturi ut quia\nsunt ut sequi eos ea sed quas"
+  },
+  {
+    "userId": 1,
+    "id": 8,
+    "title": "dolorem dolore est ipsam",
+    "body": "dignissimos aperiam dolorem qui eum\nfacilis quibusdam animi sint suscipit qui sint possimus cum\nquaerat magni maiores excepturi\nipsam ut commodi dolor voluptatum modi aut vitae"
+  },
+  {
+    "userId": 1,
+    "id": 9,
+    "title": "nesciunt iure omnis dolorem tempora et accusantium",
+    "body": "consectetur animi nesciunt iure dolore\nenim quia ad\nveniam autem ut quam aut nobis\net est aut quod aut provident voluptas autem voluptas"
+  },
+  {
+    "userId": 1,
+    "id": 10,
+    "title": "optio molestias id quia eum",
+    "body": "quo et expedita modi cum officia vel magni\ndoloribus qui repudiandae\nvero nisi sit\nquos veniam quod sed accusamus veritatis error"
+  },
+  {
+    "userId": 2,
+    "id": 11,
+    "title": "et ea vero quia laudantium autem",
+    "body": "delectus reiciendis molestiae occaecati non minima eveniet qui voluptatibus\naccusamus in eum beatae sit\nvel qui neque voluptates ut commodi qui incidunt\nut animi commodi"
+  },
+  {
+    "userId": 2,
+    "id": 12,
+    "title": "in quibusdam tempore odit est dolorem",
+    "body": "itaque id aut magnam\npraesentium quia et ea odit et ea voluptas et\nsapiente quia nihil amet occaecati quia id voluptatem\nincidunt ea est distinctio odio"
+  },
+  {
+    "userId": 2,
+    "id": 13,
+    "title": "dolorum ut in voluptas mollitia et saepe quo animi",
+    "body": "aut dicta possimus sint mollitia voluptas commodi quo doloremque\niste corrupti reiciendis voluptatem eius rerum\nsit cumque quod eligendi laborum minima\nperferendis recusandae assumenda consectetur porro architecto ipsum ipsam"
+  },
+  {
+    "userId": 2,
+    "id": 14,
+    "title": "voluptatem eligendi optio",
+    "body": "fuga et accusamus dolorum perferendis illo voluptas\nnon doloremque neque facere\nad qui dolorum molestiae beatae\nsed aut voluptas totam sit illum"
+  },
+  {
+    "userId": 2,
+    "id": 15,
+    "title": "eveniet quod temporibus",
+    "body": "reprehenderit quos placeat\nvelit minima officia dolores impedit repudiandae molestiae nam\nvoluptas recusandae quis delectus\nofficiis harum fugiat vitae"
+  },
+  {
+    "userId": 2,
+    "id": 16,
+    "title": "sint suscipit perspiciatis velit dolorum rerum ipsa laboriosam odio",
+    "body": "suscipit nam nisi quo aperiam aut\nasperiores eos fugit maiores voluptatibus quia\nvoluptatem quis ullam qui in alias quia est\nconsequatur magni mollitia accusamus ea nisi voluptate dicta"
+  },
+  {
+    "userId": 2,
+    "id": 17,
+    "title": "fugit voluptas sed molestias voluptatem provident",
+    "body": "eos voluptas et aut odit natus earum\naspernatur fuga molestiae ullam\ndeserunt ratione qui eos\nqui nihil ratione nemo velit ut aut id quo"
+  },
+  {
+    "userId": 2,
+    "id": 18,
+    "title": "voluptate et itaque vero tempora molestiae",
+    "body": "eveniet quo quis\nlaborum totam consequatur non dolor\nut et est repudiandae\nest voluptatem vel debitis et magnam"
+  },
+  {
+    "userId": 2,
+    "id": 19,
+    "title": "adipisci placeat illum aut reiciendis qui",
+    "body": "illum quis cupiditate provident sit magnam\nea sed aut omnis\nveniam maiores ullam consequatur atque\nadipisci quo iste expedita sit quos voluptas"
+  },
+  {
+    "userId": 2,
+    "id": 20,
+    "title": "doloribus ad provident suscipit at",
+    "body": "qui consequuntur ducimus possimus quisquam amet similique\nsuscipit porro ipsam amet\neos veritatis officiis exercitationem vel fugit aut necessitatibus totam\nomnis rerum consequatur expedita quidem cumque explicabo"
+  },
+  {
+    "userId": 3,
+    "id": 21,
+    "title": "asperiores ea ipsam voluptatibus modi minima quia sint",
+    "body": "repellat aliquid praesentium dolorem quo\nsed totam minus non itaque\nnihil labore molestiae sunt dolor eveniet hic recusandae veniam\ntempora et tenetur expedita sunt"
+  },
+  {
+    "userId": 3,
+    "id": 22,
+    "title": "dolor sint quo a velit explicabo quia nam",
+    "body": "eos qui et ipsum ipsam suscipit aut\nsed omnis non odio\nexpedita earum mollitia molestiae aut atque rem suscipit\nnam impedit esse"
+  },
+  {
+    "userId": 3,
+    "id": 23,
+    "title": "maxime id vitae nihil numquam",
+    "body": "veritatis unde neque eligendi\nquae quod architecto quo neque vitae\nest illo sit tempora doloremque fugit quod\net et vel beatae sequi ullam sed tenetur perspiciatis"
+  },
+  {
+    "userId": 3,
+    "id": 24,
+    "title": "autem hic labore sunt dolores incidunt",
+    "body": "enim et ex nulla\nomnis voluptas quia qui\nvoluptatem consequatur numquam aliquam sunt\ntotam recusandae id dignissimos aut sed asperiores deserunt"
+  },
+  {
+    "userId": 3,
+    "id": 25,
+    "title": "rem alias distinctio quo quis",
+    "body": "ullam consequatur ut\nomnis quis sit vel consequuntur\nipsa eligendi ipsum molestiae et omnis error nostrum\nmolestiae illo tempore quia et distinctio"
+  },
+  {
+    "userId": 3,
+    "id": 26,
+    "title": "est et quae odit qui non",
+    "body": "similique esse doloribus nihil accusamus\nomnis dolorem fuga consequuntur reprehenderit fugit recusandae temporibus\nperspiciatis cum ut laudantium\nomnis aut molestiae vel vero"
+  },
+  {
+    "userId": 3,
+    "id": 27,
+    "title": "quasi id et eos tenetur aut quo autem",
+    "body": "eum sed dolores ipsam sint possimus debitis occaecati\ndebitis qui qui et\nut placeat enim earum aut odit facilis\nconsequatur suscipit necessitatibus rerum sed inventore temporibus consequatur"
+  },
+  {
+    "userId": 3,
+    "id": 28,
+    "title": "delectus ullam et corporis nulla voluptas sequi",
+    "body": "non et quaerat ex quae ad maiores\nmaiores recusandae totam aut blanditiis mollitia quas illo\nut voluptatibus voluptatem\nsimilique nostrum eum"
+  },
+  {
+    "userId": 3,
+    "id": 29,
+    "title": "iusto eius quod necessitatibus culpa ea",
+    "body": "odit magnam ut saepe sed non qui\ntempora atque nihil\naccusamus illum doloribus illo dolor\neligendi repudiandae odit magni similique sed cum maiores"
+  },
+  {
+    "userId": 3,
+    "id": 30,
+    "title": "a quo magni similique perferendis",
+    "body": "alias dolor cumque\nimpedit blanditiis non eveniet odio maxime\nblanditiis amet eius quis tempora quia autem rem\na provident perspiciatis quia"
+  },
+  {
+    "userId": 4,
+    "id": 31,
+    "title": "ullam ut quidem id aut vel consequuntur",
+    "body": "debitis eius sed quibusdam non quis consectetur vitae\nimpedit ut qui consequatur sed aut in\nquidem sit nostrum et maiores adipisci atque\nquaerat voluptatem adipisci repudiandae"
+  },
+  {
+    "userId": 4,
+    "id": 32,
+    "title": "doloremque illum aliquid sunt",
+    "body": "deserunt eos nobis asperiores et hic\nest debitis repellat molestiae optio\nnihil ratione ut eos beatae quibusdam distinctio maiores\nearum voluptates et aut adipisci ea maiores voluptas maxime"
+  },
+  {
+    "userId": 4,
+    "id": 33,
+    "title": "qui explicabo molestiae dolorem",
+    "body": "rerum ut et numquam laborum odit est sit\nid qui sint in\nquasi tenetur tempore aperiam et quaerat qui in\nrerum officiis sequi cumque quod"
+  },
+  {
+    "userId": 4,
+    "id": 34,
+    "title": "magnam ut rerum iure",
+    "body": "ea velit perferendis earum ut voluptatem voluptate itaque iusto\ntotam pariatur in\nnemo voluptatem voluptatem autem magni tempora minima in\nest distinctio qui assumenda accusamus dignissimos officia nesciunt nobis"
+  },
+  {
+    "userId": 4,
+    "id": 35,
+    "title": "id nihil consequatur molestias animi provident",
+    "body": "nisi error delectus possimus ut eligendi vitae\nplaceat eos harum cupiditate facilis reprehenderit voluptatem beatae\nmodi ducimus quo illum voluptas eligendi\net nobis quia fugit"
+  },
+  {
+    "userId": 4,
+    "id": 36,
+    "title": "fuga nam accusamus voluptas reiciendis itaque",
+    "body": "ad mollitia et omnis minus architecto odit\nvoluptas doloremque maxime aut non ipsa qui alias veniam\nblanditiis culpa aut quia nihil cumque facere et occaecati\nqui aspernatur quia eaque ut aperiam inventore"
+  },
+  {
+    "userId": 4,
+    "id": 37,
+    "title": "provident vel ut sit ratione est... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20230520 00:12:20.427" level="INFO">C:\Users\Kashif\OneDrive\Documents\Projects\Python Ecommerce\python-eccomerce\myenv\Lib\site-packages\urllib3\connectionpool.py:1095: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jsonplaceholder.typicode.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg timestamp="20230520 00:12:20.428" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230520 00:12:20.304" endtime="20230520 00:12:20.428"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20230520 00:12:20.430" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20230520 00:12:20.429" endtime="20230520 00:12:20.430"/>
+</kw>
+<status status="PASS" starttime="20230520 00:12:20.301" endtime="20230520 00:12:20.431"/>
+</test>
+<status status="PASS" starttime="20230520 00:12:20.294" endtime="20230520 00:12:20.432"/>
+</suite>
+<suite id="s1-s5" name="Test Update Post" source="C:\Users\Kashif\OneDrive\Documents\Projects\Python Ecommerce\python-eccomerce\myenv\tests\api_tests\robot_api_tests\test_update_post.robot">
+<test id="s1-s5-t1" name="Update an Existing Post" line="5">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>jsonplaceholder</arg>
+<arg>https://jsonplaceholder.typicode.com</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230520 00:12:20.439" level="INFO">Creating Session using : alias=jsonplaceholder, url=https://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230520 00:12:20.439" endtime="20230520 00:12:20.440"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${headers}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230520 00:12:20.442" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230520 00:12:20.442" endtime="20230520 00:12:20.442"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${payload}</var>
+<arg>id=1</arg>
+<arg>title=Updated Post</arg>
+<arg>body=Hello, updated world!</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230520 00:12:20.443" level="INFO">${payload} = {'id': '1', 'title': 'Updated Post', 'body': 'Hello, updated world!'}</msg>
+<status status="PASS" starttime="20230520 00:12:20.442" endtime="20230520 00:12:20.443"/>
+</kw>
+<kw name="Put Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>jsonplaceholder</arg>
+<arg>/posts/1</arg>
+<arg>headers=${headers}</arg>
+<arg>json=${payload}</arg>
+<doc>*DEPRECATED* Please use `PUT On Session` instead.</doc>
+<msg timestamp="20230520 00:12:20.443" level="WARN">Keyword 'RequestsLibrary.Put Request' is deprecated. Please use `PUT On Session` instead.</msg>
+<msg timestamp="20230520 00:12:20.686" level="INFO">PUT Request : url=https://jsonplaceholder.typicode.com/posts/1 
+ path_url=/posts/1 
+ headers={'User-Agent': 'python-requests/2.30.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '69'} 
+ body=b'{"id": "1", "title": "Updated Post", "body": "Hello, updated world!"}' 
+ </msg>
+<msg timestamp="20230520 00:12:20.686" level="INFO">PUT Response : url=https://jsonplaceholder.typicode.com/posts/1 
+ status=200, reason=OK 
+ headers={'Date': 'Fri, 19 May 2023 23:12:22 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '997', 'X-Ratelimit-Reset': '1684537992', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Etag': 'W/"4b-kwrlPiZcsUlpMU8b2hXlDSckMRA"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=PKJ5S6nh9dNBkVGA0%2FoGKjrwDoUSTc%2BnEe%2FUL2T%2BvOW9%2FKE80cMRJDWn9mftbFxt34QfbX0%2BXTATiS78kxS4EfjIQAG65Yvhvq%2FbQZTchRqzxIMaJOaKFlnTkypkk14iXgNqwNUQPkKshzns%2Fkg%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '7ca00638892d718c-LHR', 'Content-Encoding': 'gzip'} 
+ body={
+  "id": 1,
+  "title": "Updated Post",
+  "body": "Hello, updated world!"
+} 
+ </msg>
+<msg timestamp="20230520 00:12:20.686" level="INFO">C:\Users\Kashif\OneDrive\Documents\Projects\Python Ecommerce\python-eccomerce\myenv\Lib\site-packages\urllib3\connectionpool.py:1095: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jsonplaceholder.typicode.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg timestamp="20230520 00:12:20.686" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230520 00:12:20.443" endtime="20230520 00:12:20.686"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20230520 00:12:20.688" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20230520 00:12:20.688" endtime="20230520 00:12:20.689"/>
+</kw>
+<status status="PASS" starttime="20230520 00:12:20.438" endtime="20230520 00:12:20.689"/>
+</test>
+<status status="PASS" starttime="20230520 00:12:20.434" endtime="20230520 00:12:20.691"/>
+</suite>
+<status status="PASS" starttime="20230520 00:12:19.458" endtime="20230520 00:12:20.693"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Test Suite">Test Suite</stat>
+<stat pass="5" fail="0" skip="0" id="s1" name="Robot Api Tests">Robot Api Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Test Create Post">Robot Api Tests.Test Create Post</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s2" name="Test Delete Post">Robot Api Tests.Test Delete Post</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s3" name="Test Get Comments">Robot Api Tests.Test Get Comments</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s4" name="Test Get Posts">Robot Api Tests.Test Get Posts</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s5" name="Test Update Post">Robot Api Tests.Test Update Post</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20230518 04:58:03.380" level="ERROR">Error in file 'C:\Users\Kashif\OneDrive\Documents\Projects\Python Ecommerce\python-eccomerce\myenv\tests\robot_tests\test_suite.robot' on line 2: Error in file 'C:\Users\Kashif\OneDrive\Documents\Projects\Python Ecommerce\python-eccomerce\myenv\tests\robot_tests\login.robot' on line 6: Resource file with 'Test Cases' section is invalid.</msg>
+<msg timestamp="20230520 00:12:19.709" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20230520 00:12:19.974" level="WARN">Keyword 'RequestsLibrary.Delete Request' is deprecated. Please use `DELETE On Session` instead.</msg>
+<msg timestamp="20230520 00:12:20.219" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20230520 00:12:20.304" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20230520 00:12:20.443" level="WARN">Keyword 'RequestsLibrary.Put Request' is deprecated. Please use `PUT On Session` instead.</msg>
 </errors>
 </robot>
