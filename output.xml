@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.0 on win32)" generated="20230520 00:12:19.456" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.2 (Python 3.11.0 on win32)" generated="20230520 03:07:35.928" rpa="false" schemaversion="3">
 <suite id="s1" name="Robot Api Tests" source="C:\Users\Kashif\OneDrive\Documents\Projects\Python Ecommerce\python-eccomerce\myenv\tests\api_tests\robot_api_tests">
 <suite id="s1-s1" name="Test Create Post" source="C:\Users\Kashif\OneDrive\Documents\Projects\Python Ecommerce\python-eccomerce\myenv\tests\api_tests\robot_api_tests\test_create_post.robot">
 <test id="s1-s1-t1" name="Create a New Post" line="5">
@@ -7,15 +7,15 @@
 <arg>jsonplaceholder</arg>
 <arg>https://jsonplaceholder.typicode.com</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20230520 00:12:19.707" level="INFO">Creating Session using : alias=jsonplaceholder, url=https://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20230520 00:12:19.707" endtime="20230520 00:12:19.707"/>
+<msg timestamp="20230520 03:07:36.294" level="INFO">Creating Session using : alias=jsonplaceholder, url=https://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230520 03:07:36.293" endtime="20230520 03:07:36.294"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${headers}</var>
 <arg>Content-Type=application/json</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20230520 00:12:19.708" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
-<status status="PASS" starttime="20230520 00:12:19.707" endtime="20230520 00:12:19.708"/>
+<msg timestamp="20230520 03:07:36.295" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230520 03:07:36.295" endtime="20230520 03:07:36.295"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${payload}</var>
@@ -23,8 +23,8 @@
 <arg>body=Hello, world!</arg>
 <arg>userId=1</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20230520 00:12:19.708" level="INFO">${payload} = {'title': 'New Post', 'body': 'Hello, world!', 'userId': '1'}</msg>
-<status status="PASS" starttime="20230520 00:12:19.708" endtime="20230520 00:12:19.709"/>
+<msg timestamp="20230520 03:07:36.296" level="INFO">${payload} = {'title': 'New Post', 'body': 'Hello, world!', 'userId': '1'}</msg>
+<status status="PASS" starttime="20230520 03:07:36.296" endtime="20230520 03:07:36.296"/>
 </kw>
 <kw name="Post Request" library="RequestsLibrary">
 <var>${response}</var>
@@ -33,15 +33,15 @@
 <arg>headers=${headers}</arg>
 <arg>json=${payload}</arg>
 <doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
-<msg timestamp="20230520 00:12:19.709" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
-<msg timestamp="20230520 00:12:19.956" level="INFO">POST Request : url=https://jsonplaceholder.typicode.com/posts 
+<msg timestamp="20230520 03:07:36.297" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20230520 03:07:36.554" level="INFO">POST Request : url=https://jsonplaceholder.typicode.com/posts 
  path_url=/posts 
  headers={'User-Agent': 'python-requests/2.30.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '61'} 
  body=b'{"title": "New Post", "body": "Hello, world!", "userId": "1"}' 
  </msg>
-<msg timestamp="20230520 00:12:19.956" level="INFO">POST Response : url=https://jsonplaceholder.typicode.com/posts 
+<msg timestamp="20230520 03:07:36.554" level="INFO">POST Response : url=https://jsonplaceholder.typicode.com/posts 
  status=201, reason=Created 
- headers={'Date': 'Fri, 19 May 2023 23:12:21 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '82', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '999', 'X-Ratelimit-Reset': '1684537992', 'Vary': 'Origin, X-HTTP-Method-Override, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Expires': '-1', 'Access-Control-Expose-Headers': 'Location', 'Location': 'http://jsonplaceholder.typicode.com/posts/101', 'X-Content-Type-Options': 'nosniff', 'Etag': 'W/"52-4s2zhtmctWVWc0nhwmGwVcEZl3M"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=qO3EBe95russAtj9slYX86VSqE%2BhhtVJN5722q6kBDyqmW8w28CUg%2Fcdy2GWvsGX7nkFUglUnBxcfEdYN%2Bx%2FoMREQshWyPK%2FL14zK7ZCWvw2iKu5nes6YAaNXTFRX1nC0%2FVWeJ%2BdaqzGb6fFS%2Bc%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '7ca0063419e6dccf-LHR'} 
+ headers={'Date': 'Sat, 20 May 2023 02:07:37 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '82', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '999', 'X-Ratelimit-Reset': '1684548492', 'Vary': 'Origin, X-HTTP-Method-Override, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Expires': '-1', 'Access-Control-Expose-Headers': 'Location', 'Location': 'http://jsonplaceholder.typicode.com/posts/101', 'X-Content-Type-Options': 'nosniff', 'Etag': 'W/"52-4s2zhtmctWVWc0nhwmGwVcEZl3M"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=40TAB3vN5z2Snzz1NW8hx5Y9kLuOu7m3pzAQDYigxhO%2B%2FR4DQkszps%2Fz7zLXrGj4J8iL1HwQAn%2FqzUR7YznYeKfdZ0T10hoVyFW%2BClq0zCl2asnuuc8h1MuelTX0%2Fv1eFd1MgVEhQ%2FwJZkW0zFY%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '7ca106f54d2d48c7-LHR'} 
  body={
   "title": "New Post",
   "body": "Hello, world!",
@@ -49,23 +49,23 @@
   "id": 101
 } 
  </msg>
-<msg timestamp="20230520 00:12:19.957" level="INFO">C:\Users\Kashif\OneDrive\Documents\Projects\Python Ecommerce\python-eccomerce\myenv\Lib\site-packages\urllib3\connectionpool.py:1095: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jsonplaceholder.typicode.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg timestamp="20230520 03:07:36.554" level="INFO">C:\Users\Kashif\OneDrive\Documents\Projects\Python Ecommerce\python-eccomerce\myenv\Lib\site-packages\urllib3\connectionpool.py:1095: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jsonplaceholder.typicode.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg timestamp="20230520 00:12:19.957" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20230520 00:12:19.709" endtime="20230520 00:12:19.957"/>
+<msg timestamp="20230520 03:07:36.555" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20230520 03:07:36.297" endtime="20230520 03:07:36.555"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${response.status_code}</arg>
 <arg>201</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20230520 00:12:19.960" level="INFO">Argument types are:
+<msg timestamp="20230520 03:07:36.556" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
-<status status="PASS" starttime="20230520 00:12:19.959" endtime="20230520 00:12:19.960"/>
+<status status="PASS" starttime="20230520 03:07:36.556" endtime="20230520 03:07:36.556"/>
 </kw>
-<status status="PASS" starttime="20230520 00:12:19.706" endtime="20230520 00:12:19.961"/>
+<status status="PASS" starttime="20230520 03:07:36.293" endtime="20230520 03:07:36.557"/>
 </test>
-<status status="PASS" starttime="20230520 00:12:19.498" endtime="20230520 00:12:19.962"/>
+<status status="PASS" starttime="20230520 03:07:35.966" endtime="20230520 03:07:36.559"/>
 </suite>
 <suite id="s1-s2" name="Test Delete Post" source="C:\Users\Kashif\OneDrive\Documents\Projects\Python Ecommerce\python-eccomerce\myenv\tests\api_tests\robot_api_tests\test_delete_post.robot">
 <test id="s1-s2-t1" name="Delete a Post" line="5">
@@ -73,42 +73,42 @@
 <arg>jsonplaceholder</arg>
 <arg>https://jsonplaceholder.typicode.com</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20230520 00:12:19.972" level="INFO">Creating Session using : alias=jsonplaceholder, url=https://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20230520 00:12:19.971" endtime="20230520 00:12:19.973"/>
+<msg timestamp="20230520 03:07:36.569" level="INFO">Creating Session using : alias=jsonplaceholder, url=https://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230520 03:07:36.569" endtime="20230520 03:07:36.570"/>
 </kw>
 <kw name="Delete Request" library="RequestsLibrary">
 <var>${response}</var>
 <arg>jsonplaceholder</arg>
 <arg>/posts/1</arg>
 <doc>*DEPRECATED* Please use `DELETE On Session` instead.</doc>
-<msg timestamp="20230520 00:12:19.974" level="WARN">Keyword 'RequestsLibrary.Delete Request' is deprecated. Please use `DELETE On Session` instead.</msg>
-<msg timestamp="20230520 00:12:20.204" level="INFO">DELETE Request : url=https://jsonplaceholder.typicode.com/posts/1 
+<msg timestamp="20230520 03:07:36.570" level="WARN">Keyword 'RequestsLibrary.Delete Request' is deprecated. Please use `DELETE On Session` instead.</msg>
+<msg timestamp="20230520 03:07:36.791" level="INFO">DELETE Request : url=https://jsonplaceholder.typicode.com/posts/1 
  path_url=/posts/1 
  headers={'User-Agent': 'python-requests/2.30.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20230520 00:12:20.204" level="INFO">DELETE Response : url=https://jsonplaceholder.typicode.com/posts/1 
+<msg timestamp="20230520 03:07:36.791" level="INFO">DELETE Response : url=https://jsonplaceholder.typicode.com/posts/1 
  status=200, reason=OK 
- headers={'Date': 'Fri, 19 May 2023 23:12:21 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '2', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '998', 'X-Ratelimit-Reset': '1684537992', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Etag': 'W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=SzH5AZVXRX1WnyPfNRFw6I%2Bnto3c6vFZP1uvttnTin3wFc1D3wfkNNM6p2rA1z5n4eQZ2Ks0xQpCP2f6D%2Boi7UKWmo4B%2FHFkZiJza0pK%2BRaOMD5Ec7SpO%2F19adz%2BusJJc9eEGOVcGpon%2FKskWio%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '7ca006359e397702-LHR'} 
+ headers={'Date': 'Sat, 20 May 2023 02:07:38 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '2', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '998', 'X-Ratelimit-Reset': '1684548492', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Etag': 'W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=15sIMiceEICeMk73L5BCoekwM7pVLovYBWi%2FKkaHX9bsaCKpFQVsq9NFHV%2FsGmAAX%2BaDV%2BTXP7BCtm0X3TKyqqgCudYB%2BvwCnTeH8il4gsVgkpLmINvNTMg6R3k2hSQhf%2B%2Fpv8izH6LmPk1zxU8%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '7ca106f6ea2a23f9-LHR'} 
  body={} 
  </msg>
-<msg timestamp="20230520 00:12:20.204" level="INFO">C:\Users\Kashif\OneDrive\Documents\Projects\Python Ecommerce\python-eccomerce\myenv\Lib\site-packages\urllib3\connectionpool.py:1095: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jsonplaceholder.typicode.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg timestamp="20230520 03:07:36.791" level="INFO">C:\Users\Kashif\OneDrive\Documents\Projects\Python Ecommerce\python-eccomerce\myenv\Lib\site-packages\urllib3\connectionpool.py:1095: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jsonplaceholder.typicode.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg timestamp="20230520 00:12:20.204" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20230520 00:12:19.974" endtime="20230520 00:12:20.204"/>
+<msg timestamp="20230520 03:07:36.792" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230520 03:07:36.570" endtime="20230520 03:07:36.792"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20230520 00:12:20.207" level="INFO">Argument types are:
+<msg timestamp="20230520 03:07:36.794" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
-<status status="PASS" starttime="20230520 00:12:20.206" endtime="20230520 00:12:20.207"/>
+<status status="PASS" starttime="20230520 03:07:36.794" endtime="20230520 03:07:36.794"/>
 </kw>
-<status status="PASS" starttime="20230520 00:12:19.971" endtime="20230520 00:12:20.208"/>
+<status status="PASS" starttime="20230520 03:07:36.568" endtime="20230520 03:07:36.795"/>
 </test>
-<status status="PASS" starttime="20230520 00:12:19.965" endtime="20230520 00:12:20.210"/>
+<status status="PASS" starttime="20230520 03:07:36.561" endtime="20230520 03:07:36.797"/>
 </suite>
 <suite id="s1-s3" name="Test Get Comments" source="C:\Users\Kashif\OneDrive\Documents\Projects\Python Ecommerce\python-eccomerce\myenv\tests\api_tests\robot_api_tests\test_get_comments.robot">
 <test id="s1-s3-t1" name="Get Comments for a Post" line="5">
@@ -116,23 +116,23 @@
 <arg>jsonplaceholder</arg>
 <arg>https://jsonplaceholder.typicode.com</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20230520 00:12:20.218" level="INFO">Creating Session using : alias=jsonplaceholder, url=https://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20230520 00:12:20.217" endtime="20230520 00:12:20.218"/>
+<msg timestamp="20230520 03:07:36.808" level="INFO">Creating Session using : alias=jsonplaceholder, url=https://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230520 03:07:36.808" endtime="20230520 03:07:36.808"/>
 </kw>
 <kw name="Get Request" library="RequestsLibrary">
 <var>${response}</var>
 <arg>jsonplaceholder</arg>
 <arg>/comments?postId=1</arg>
 <doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
-<msg timestamp="20230520 00:12:20.219" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
-<msg timestamp="20230520 00:12:20.289" level="INFO">GET Request : url=https://jsonplaceholder.typicode.com/comments?postId=1 
+<msg timestamp="20230520 03:07:36.809" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20230520 03:07:36.875" level="INFO">GET Request : url=https://jsonplaceholder.typicode.com/comments?postId=1 
  path_url=/comments?postId=1 
  headers={'User-Agent': 'python-requests/2.30.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20230520 00:12:20.289" level="INFO">GET Response : url=https://jsonplaceholder.typicode.com/comments?postId=1 
+<msg timestamp="20230520 03:07:36.875" level="INFO">GET Response : url=https://jsonplaceholder.typicode.com/comments?postId=1 
  status=200, reason=OK 
- headers={'Date': 'Fri, 19 May 2023 23:12:21 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '999', 'X-Ratelimit-Reset': '1681470347', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'max-age=43200', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Etag': 'W/"5e6-4bSPS5tq8F8ZDeFJULWh6upjp7U"', 'Content-Encoding': 'gzip', 'Via': '1.1 vegur', 'CF-Cache-Status': 'HIT', 'Age': '25006', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=D%2Bmllx1xDGcfaicw2KcjOwG7ABQyZeaoEZvdjJXaRuAj%2BUoBjNiRwlNxxeQ82XXHrBIaZ4lNC0p7ksgj3A9g2yQvg9MZagQB9MDEjoSaTxSH0vZd8BK6T%2BU9jgYp9wAxHcjoO8aXyRathj6yYJQ%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '7ca006372b567791-LHR'} 
+ headers={'Date': 'Sat, 20 May 2023 02:07:38 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '999', 'X-Ratelimit-Reset': '1683578791', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'max-age=43200', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Etag': 'W/"5e6-4bSPS5tq8F8ZDeFJULWh6upjp7U"', 'Content-Encoding': 'gzip', 'Via': '1.1 vegur', 'CF-Cache-Status': 'HIT', 'Age': '5224', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=BnSfngbHIYmQLo24%2F9L02pTcE0VAByteQPDw%2FIwsVdN9oD5WDUOHPKVzDNuVvWMMIiMWmwA9dayKOLDDcY1Skd2x9g2LAaz1wbUKMJ4bkup%2BT8EI46xd4Fh2S18H%2FJgY%2Fsu8oF5BwRFLEhkalSI%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '7ca106f86fde3853-LHR'} 
  body=[
   {
     "postId": 1,
@@ -171,23 +171,23 @@
   }
 ] 
  </msg>
-<msg timestamp="20230520 00:12:20.289" level="INFO">C:\Users\Kashif\OneDrive\Documents\Projects\Python Ecommerce\python-eccomerce\myenv\Lib\site-packages\urllib3\connectionpool.py:1095: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jsonplaceholder.typicode.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg timestamp="20230520 03:07:36.875" level="INFO">C:\Users\Kashif\OneDrive\Documents\Projects\Python Ecommerce\python-eccomerce\myenv\Lib\site-packages\urllib3\connectionpool.py:1095: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jsonplaceholder.typicode.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg timestamp="20230520 00:12:20.289" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20230520 00:12:20.219" endtime="20230520 00:12:20.289"/>
+<msg timestamp="20230520 03:07:36.876" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230520 03:07:36.809" endtime="20230520 03:07:36.876"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20230520 00:12:20.292" level="INFO">Argument types are:
+<msg timestamp="20230520 03:07:36.879" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
-<status status="PASS" starttime="20230520 00:12:20.291" endtime="20230520 00:12:20.292"/>
+<status status="PASS" starttime="20230520 03:07:36.878" endtime="20230520 03:07:36.879"/>
 </kw>
-<status status="PASS" starttime="20230520 00:12:20.216" endtime="20230520 00:12:20.292"/>
+<status status="PASS" starttime="20230520 03:07:36.807" endtime="20230520 03:07:36.880"/>
 </test>
-<status status="PASS" starttime="20230520 00:12:20.212" endtime="20230520 00:12:20.293"/>
+<status status="PASS" starttime="20230520 03:07:36.800" endtime="20230520 03:07:36.883"/>
 </suite>
 <suite id="s1-s4" name="Test Get Posts" source="C:\Users\Kashif\OneDrive\Documents\Projects\Python Ecommerce\python-eccomerce\myenv\tests\api_tests\robot_api_tests\test_get_posts.robot">
 <test id="s1-s4-t1" name="Get All Posts" line="6">
@@ -195,23 +195,23 @@
 <arg>jsonplaceholder</arg>
 <arg>https://jsonplaceholder.typicode.com</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20230520 00:12:20.303" level="INFO">Creating Session using : alias=jsonplaceholder, url=https://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20230520 00:12:20.303" endtime="20230520 00:12:20.303"/>
+<msg timestamp="20230520 03:07:36.894" level="INFO">Creating Session using : alias=jsonplaceholder, url=https://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230520 03:07:36.894" endtime="20230520 03:07:36.894"/>
 </kw>
 <kw name="Get Request" library="RequestsLibrary">
 <var>${response}</var>
 <arg>jsonplaceholder</arg>
 <arg>/posts</arg>
 <doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
-<msg timestamp="20230520 00:12:20.304" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
-<msg timestamp="20230520 00:12:20.427" level="INFO">GET Request : url=https://jsonplaceholder.typicode.com/posts 
+<msg timestamp="20230520 03:07:36.895" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20230520 03:07:36.968" level="INFO">GET Request : url=https://jsonplaceholder.typicode.com/posts 
  path_url=/posts 
  headers={'User-Agent': 'python-requests/2.30.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20230520 00:12:20.427" level="INFO">GET Response : url=https://jsonplaceholder.typicode.com/posts 
+<msg timestamp="20230520 03:07:36.969" level="INFO">GET Response : url=https://jsonplaceholder.typicode.com/posts 
  status=200, reason=OK 
- headers={'Date': 'Fri, 19 May 2023 23:12:21 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '999', 'X-Ratelimit-Reset': '1681743162', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'max-age=43200', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Etag': 'W/"6b80-Ybsq/K6GwwqrYkAsFxqDXGC7DoM"', 'Content-Encoding': 'gzip', 'Via': '1.1 vegur', 'CF-Cache-Status': 'HIT', 'Age': '15770', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=dhf8NYd8y9Pp6E0oCFoS%2BQhfqha05Caqs9fSI59zaJM7fSRzkGzzWQ2sj5FJ2fCL8AQFKMVSBPAtIV5EHAZC0Wdx6AGNRU8AT5nV44p%2FpFWWB8lRRDrG1kSBqoyMDL3BnrQqFyxJINMsXSB9mp0%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '7ca006380f4a4886-LHR'} 
+ headers={'Date': 'Sat, 20 May 2023 02:07:38 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '998', 'X-Ratelimit-Reset': '1680887998', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'max-age=43200', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Etag': 'W/"6b80-Ybsq/K6GwwqrYkAsFxqDXGC7DoM"', 'Content-Encoding': 'gzip', 'Via': '1.1 vegur', 'CF-Cache-Status': 'HIT', 'Age': '18823', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=q%2B020ygY31DVQvtVV4C2YL3vYy1BINXZDC6k1q3gkkfZADD3cTumtrWP50dDiQbNHhh8oLCqcijm14hGZD8HpVpnji9jw0vnbVDk1C1ULWmF7zn6mXUGk301We%2FRyC8znp3YDJLA0NalOQyU5YA%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '7ca106f8eb7076a7-LHR'} 
  body=[
   {
     "userId": 1,
@@ -434,23 +434,23 @@
     "id": 37,
     "title": "provident vel ut sit ratione est... (set the log level to DEBUG or TRACE to see the full content) 
  </msg>
-<msg timestamp="20230520 00:12:20.427" level="INFO">C:\Users\Kashif\OneDrive\Documents\Projects\Python Ecommerce\python-eccomerce\myenv\Lib\site-packages\urllib3\connectionpool.py:1095: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jsonplaceholder.typicode.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg timestamp="20230520 03:07:36.969" level="INFO">C:\Users\Kashif\OneDrive\Documents\Projects\Python Ecommerce\python-eccomerce\myenv\Lib\site-packages\urllib3\connectionpool.py:1095: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jsonplaceholder.typicode.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg timestamp="20230520 00:12:20.428" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20230520 00:12:20.304" endtime="20230520 00:12:20.428"/>
+<msg timestamp="20230520 03:07:36.969" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230520 03:07:36.895" endtime="20230520 03:07:36.970"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20230520 00:12:20.430" level="INFO">Argument types are:
+<msg timestamp="20230520 03:07:36.972" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
-<status status="PASS" starttime="20230520 00:12:20.429" endtime="20230520 00:12:20.430"/>
+<status status="PASS" starttime="20230520 03:07:36.971" endtime="20230520 03:07:36.972"/>
 </kw>
-<status status="PASS" starttime="20230520 00:12:20.301" endtime="20230520 00:12:20.431"/>
+<status status="PASS" starttime="20230520 03:07:36.893" endtime="20230520 03:07:36.973"/>
 </test>
-<status status="PASS" starttime="20230520 00:12:20.294" endtime="20230520 00:12:20.432"/>
+<status status="PASS" starttime="20230520 03:07:36.886" endtime="20230520 03:07:36.974"/>
 </suite>
 <suite id="s1-s5" name="Test Update Post" source="C:\Users\Kashif\OneDrive\Documents\Projects\Python Ecommerce\python-eccomerce\myenv\tests\api_tests\robot_api_tests\test_update_post.robot">
 <test id="s1-s5-t1" name="Update an Existing Post" line="5">
@@ -458,15 +458,15 @@
 <arg>jsonplaceholder</arg>
 <arg>https://jsonplaceholder.typicode.com</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20230520 00:12:20.439" level="INFO">Creating Session using : alias=jsonplaceholder, url=https://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20230520 00:12:20.439" endtime="20230520 00:12:20.440"/>
+<msg timestamp="20230520 03:07:36.985" level="INFO">Creating Session using : alias=jsonplaceholder, url=https://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230520 03:07:36.985" endtime="20230520 03:07:36.985"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${headers}</var>
 <arg>Content-Type=application/json</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20230520 00:12:20.442" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
-<status status="PASS" starttime="20230520 00:12:20.442" endtime="20230520 00:12:20.442"/>
+<msg timestamp="20230520 03:07:36.986" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230520 03:07:36.986" endtime="20230520 03:07:36.986"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${payload}</var>
@@ -474,8 +474,8 @@
 <arg>title=Updated Post</arg>
 <arg>body=Hello, updated world!</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20230520 00:12:20.443" level="INFO">${payload} = {'id': '1', 'title': 'Updated Post', 'body': 'Hello, updated world!'}</msg>
-<status status="PASS" starttime="20230520 00:12:20.442" endtime="20230520 00:12:20.443"/>
+<msg timestamp="20230520 03:07:36.986" level="INFO">${payload} = {'id': '1', 'title': 'Updated Post', 'body': 'Hello, updated world!'}</msg>
+<status status="PASS" starttime="20230520 03:07:36.986" endtime="20230520 03:07:36.986"/>
 </kw>
 <kw name="Put Request" library="RequestsLibrary">
 <var>${response}</var>
@@ -484,40 +484,40 @@
 <arg>headers=${headers}</arg>
 <arg>json=${payload}</arg>
 <doc>*DEPRECATED* Please use `PUT On Session` instead.</doc>
-<msg timestamp="20230520 00:12:20.443" level="WARN">Keyword 'RequestsLibrary.Put Request' is deprecated. Please use `PUT On Session` instead.</msg>
-<msg timestamp="20230520 00:12:20.686" level="INFO">PUT Request : url=https://jsonplaceholder.typicode.com/posts/1 
+<msg timestamp="20230520 03:07:36.987" level="WARN">Keyword 'RequestsLibrary.Put Request' is deprecated. Please use `PUT On Session` instead.</msg>
+<msg timestamp="20230520 03:07:37.211" level="INFO">PUT Request : url=https://jsonplaceholder.typicode.com/posts/1 
  path_url=/posts/1 
  headers={'User-Agent': 'python-requests/2.30.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '69'} 
  body=b'{"id": "1", "title": "Updated Post", "body": "Hello, updated world!"}' 
  </msg>
-<msg timestamp="20230520 00:12:20.686" level="INFO">PUT Response : url=https://jsonplaceholder.typicode.com/posts/1 
+<msg timestamp="20230520 03:07:37.211" level="INFO">PUT Response : url=https://jsonplaceholder.typicode.com/posts/1 
  status=200, reason=OK 
- headers={'Date': 'Fri, 19 May 2023 23:12:22 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '997', 'X-Ratelimit-Reset': '1684537992', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Etag': 'W/"4b-kwrlPiZcsUlpMU8b2hXlDSckMRA"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=PKJ5S6nh9dNBkVGA0%2FoGKjrwDoUSTc%2BnEe%2FUL2T%2BvOW9%2FKE80cMRJDWn9mftbFxt34QfbX0%2BXTATiS78kxS4EfjIQAG65Yvhvq%2FbQZTchRqzxIMaJOaKFlnTkypkk14iXgNqwNUQPkKshzns%2Fkg%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '7ca00638892d718c-LHR', 'Content-Encoding': 'gzip'} 
+ headers={'Date': 'Sat, 20 May 2023 02:07:38 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '997', 'X-Ratelimit-Reset': '1684548492', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Etag': 'W/"4b-kwrlPiZcsUlpMU8b2hXlDSckMRA"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=jdP8HyTLvP6dLItNeC6YIUKfpF8ekm3sr2sSW87j4VetDeeGPJtjwHTAfuPsNU%2FssBNyfZdMdASdzuDuyDVPCvyN%2FD5MY2njKojQV70ta%2F9sA59kJmxc%2FpYL3vmVoloz8Xn1LJ0gjzss6u21%2Bfg%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '7ca106f97b7271c6-LHR', 'Content-Encoding': 'gzip'} 
  body={
   "id": 1,
   "title": "Updated Post",
   "body": "Hello, updated world!"
 } 
  </msg>
-<msg timestamp="20230520 00:12:20.686" level="INFO">C:\Users\Kashif\OneDrive\Documents\Projects\Python Ecommerce\python-eccomerce\myenv\Lib\site-packages\urllib3\connectionpool.py:1095: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jsonplaceholder.typicode.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg timestamp="20230520 03:07:37.212" level="INFO">C:\Users\Kashif\OneDrive\Documents\Projects\Python Ecommerce\python-eccomerce\myenv\Lib\site-packages\urllib3\connectionpool.py:1095: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jsonplaceholder.typicode.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg timestamp="20230520 00:12:20.686" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20230520 00:12:20.443" endtime="20230520 00:12:20.686"/>
+<msg timestamp="20230520 03:07:37.212" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230520 03:07:36.987" endtime="20230520 03:07:37.212"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20230520 00:12:20.688" level="INFO">Argument types are:
+<msg timestamp="20230520 03:07:37.215" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
-<status status="PASS" starttime="20230520 00:12:20.688" endtime="20230520 00:12:20.689"/>
+<status status="PASS" starttime="20230520 03:07:37.214" endtime="20230520 03:07:37.215"/>
 </kw>
-<status status="PASS" starttime="20230520 00:12:20.438" endtime="20230520 00:12:20.689"/>
+<status status="PASS" starttime="20230520 03:07:36.983" endtime="20230520 03:07:37.216"/>
 </test>
-<status status="PASS" starttime="20230520 00:12:20.434" endtime="20230520 00:12:20.691"/>
+<status status="PASS" starttime="20230520 03:07:36.977" endtime="20230520 03:07:37.218"/>
 </suite>
-<status status="PASS" starttime="20230520 00:12:19.458" endtime="20230520 00:12:20.693"/>
+<status status="PASS" starttime="20230520 03:07:35.931" endtime="20230520 03:07:37.221"/>
 </suite>
 <statistics>
 <total>
@@ -535,10 +535,10 @@
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20230520 00:12:19.709" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
-<msg timestamp="20230520 00:12:19.974" level="WARN">Keyword 'RequestsLibrary.Delete Request' is deprecated. Please use `DELETE On Session` instead.</msg>
-<msg timestamp="20230520 00:12:20.219" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
-<msg timestamp="20230520 00:12:20.304" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
-<msg timestamp="20230520 00:12:20.443" level="WARN">Keyword 'RequestsLibrary.Put Request' is deprecated. Please use `PUT On Session` instead.</msg>
+<msg timestamp="20230520 03:07:36.297" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20230520 03:07:36.570" level="WARN">Keyword 'RequestsLibrary.Delete Request' is deprecated. Please use `DELETE On Session` instead.</msg>
+<msg timestamp="20230520 03:07:36.809" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20230520 03:07:36.895" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20230520 03:07:36.987" level="WARN">Keyword 'RequestsLibrary.Put Request' is deprecated. Please use `PUT On Session` instead.</msg>
 </errors>
 </robot>
